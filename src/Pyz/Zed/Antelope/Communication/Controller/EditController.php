@@ -5,6 +5,7 @@ namespace Pyz\Zed\Antelope\Communication\Controller;
 use Generated\Shared\Transfer\AntelopeTransfer;
 use Pyz\Zed\Antelope\Communication\Form\DataProvider\AntelopeFormDataProvider;
 use Spryker\Zed\Kernel\Communication\Controller\AbstractController;
+use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -75,9 +76,7 @@ class EditController extends AbstractController
     {
         /** @var \Generated\Shared\Transfer\AntelopeTransfer $antelopeTransfer */
         $antelopeTransfer = $antelopeForm->getData();
-        $antelopeResponseTransfer = $this->getFactory()
-            ->getAntelopeFacade()
-            ->update($antelopeTransfer);
+        $antelopeResponseTransfer = $this->getFacade()->update($antelopeTransfer);
 
         if (!$antelopeResponseTransfer->getIsSuccessful()) {
             foreach ($antelopeResponseTransfer->getMessages() as $message) {

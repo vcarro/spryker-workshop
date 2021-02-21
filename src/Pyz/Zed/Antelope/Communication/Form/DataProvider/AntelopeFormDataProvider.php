@@ -31,7 +31,7 @@ class AntelopeFormDataProvider
     public function getOptions(): array
     {
         return  [
-            'data_class' => AntelopeTransfer::class
+           'data_class' => AntelopeTransfer::class
         ];
     }
 

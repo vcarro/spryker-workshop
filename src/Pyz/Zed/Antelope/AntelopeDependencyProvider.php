@@ -1,13 +1,28 @@
 <?php
 
-class AntelopeDependencyProvider extends \Spryker\Zed\Kernel\AbstractBundleDependencyProvider
+namespace Pyz\Zed\Antelope;
+
+use Spryker\Zed\Kernel\AbstractBundleDependencyProvider;
+use Spryker\Zed\Kernel\Container;
+
+class AntelopeDependencyProvider extends AbstractBundleDependencyProvider
 {
     /**
      * @param \Spryker\Zed\Kernel\Container $container
      * @return \Spryker\Zed\Kernel\Container
      */
-    public function provideCommunicationLayerDependencies(\Spryker\Zed\Kernel\Container $container)
+    public function provideCommunicationLayerDependencies(Container $container)
     {
-        return parent::provideCommunicationLayerDependencies($container);
+        return $container;
+    }
+
+    public function provideBusinessLayerDependencies(Container $container)
+    {
+        return $container;
+    }
+
+    public function providePersistenceLayerDependencies(Container $container)
+    {
+        return $container;
     }
 }

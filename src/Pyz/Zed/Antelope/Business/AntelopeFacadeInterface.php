@@ -20,7 +20,7 @@ interface AntelopeFacadeInterface
     /**
      * @param \Generated\Shared\Transfer\AntelopeTransfer $antelopeTransfer
      *
-     * @return \Generated\Shared\Transfer\AntelopeTransfer
+     * @return \Generated\Shared\Transfer\AntelopeResponseTransfer
      */
-    public function update(AntelopeTransfer $antelopeTransfer): AntelopeTransfer;
+    public function update(AntelopeTransfer $antelopeTransfer): AntelopeResponseTransfer;
 }

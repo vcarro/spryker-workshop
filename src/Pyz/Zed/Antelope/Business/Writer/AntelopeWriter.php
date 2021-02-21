@@ -2,6 +2,7 @@
 
 namespace Pyz\Zed\Antelope\Business\Writer;
 
+use Generated\Shared\Transfer\AntelopeResponseTransfer;
 use Generated\Shared\Transfer\AntelopeTransfer;
 use Pyz\Zed\Antelope\Persistence\AntelopeRepositoryInterface;
 
@@ -23,10 +24,14 @@ class AntelopeWriter implements AntelopeWriterInterface
     /**
      * @param \Generated\Shared\Transfer\AntelopeTransfer $antelopeTransfer
      *
-     * @return \Generated\Shared\Transfer\AntelopeTransfer|null
+     * @return \Generated\Shared\Transfer\AntelopeResponseTransfer|null
      */
-    public function update(AntelopeTransfer $antelopeTransfer): ?AntelopeTransfer
+    public function update(AntelopeTransfer $antelopeTransfer): ?AntelopeResponseTransfer
     {
-        return $this->antelopeRepository->update($antelopeTransfer);
+        $antelopeTransfer = $this->antelopeRepository->update($antelopeTransfer);
+
+        return (new AntelopeResponseTransfer())
+            ->setAntelope($antelopeTransfer)
+            ->setIsSuccessful(true);
     }
 }
