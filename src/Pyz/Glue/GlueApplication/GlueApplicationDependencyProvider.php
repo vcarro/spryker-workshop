@@ -7,6 +7,7 @@
 
 namespace Pyz\Glue\GlueApplication;
 
+use Pyz\Glue\AntelopesRestApi\Plugin\AntelopesResourceRoutePlugin;
 use Pyz\Glue\NavigationsRestApi\NavigationsRestApiConfig;
 use Spryker\Glue\AlternativeProductsRestApi\Plugin\GlueApplication\AbstractAlternativeProductsResourceRoutePlugin;
 use Spryker\Glue\AlternativeProductsRestApi\Plugin\GlueApplication\ConcreteAlternativeProductsResourceRoutePlugin;
@@ -214,6 +215,7 @@ class GlueApplicationDependencyProvider extends SprykerGlueApplicationDependency
             new SalesUnitsResourceRoutePlugin(),
             new ReturnReasonsResourceRoutePlugin(),
             new ReturnsResourceRoutePlugin(),
+            new AntelopesResourceRoutePlugin(),
         ];
     }
 

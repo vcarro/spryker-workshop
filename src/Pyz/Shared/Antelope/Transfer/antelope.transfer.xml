@@ -15,4 +15,9 @@
         <property name="messages" type="ResponseMessage[]" singular="message"/>
     </transfer>
 
+    <transfer name="RestAntelopesAttributes">
+        <property name="name" type="string"/>
+        <property name="color" type="string"/>
+    </transfer>
+
 </transfers>
