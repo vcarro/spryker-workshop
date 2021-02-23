@@ -1,0 +1,13 @@
+{% extends template('widget') %}
+
+{% define data = {
+    antelope: _widget.antelope
+} %}
+
+{% block body %}
+    {% include molecule('antelope-box') with {
+        data: {
+            name: data.antelope.name
+        }
+    } only %}
+{% endblock %}
