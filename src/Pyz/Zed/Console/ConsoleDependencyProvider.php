@@ -156,6 +156,7 @@ use Spryker\Zed\Uuid\Communication\Console\UuidGeneratorConsole;
 use Spryker\Zed\ZedNavigation\Communication\Console\BuildNavigationConsole;
 use Spryker\Zed\ZedNavigation\Communication\Console\RemoveNavigationCacheConsole;
 use SprykerEco\Zed\NewRelic\Communication\Console\RecordDeploymentConsole;
+use SprykerMiddleware\Zed\Process\Communication\Console\ProcessConsole;
 use Stecman\Component\Symfony\Console\BashCompletion\CompletionCommand;
 
 /**
@@ -341,6 +342,8 @@ class ConsoleDependencyProvider extends SprykerConsoleDependencyProvider
             new RecordDeploymentConsole(),
 
             new OrderInvoiceSendConsole(),
+
+            new ProcessConsole(),
         ];
 
         $propelCommands = $container->getLocator()->propel()->facade()->getConsoleCommands();
